@@ -16,6 +16,12 @@ export const Input = styled.input`
   color: #333333;
   font-size: 16px;
   font-family: Arial, sans-serif;
+  @media (max-width: 992px) {
+    width: 20rem;
+  }
+  @media (max-width: 676px) {
+    width: 12rem;
+  }
 `;
 
 export const Button = styled.button`

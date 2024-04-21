@@ -6,7 +6,6 @@ interface ContainerProps {
 
 export const Container = styled.div<ContainerProps>`
   margin-bottom: 2rem;
-  margin-left: 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -16,6 +15,12 @@ export const Container = styled.div<ContainerProps>`
   border-radius: 5px;
   width: 50rem;
   color: white;
+  @media (max-width: 992px) {
+    width: 40rem;
+  }
+  @media (max-width: 676px) {
+    width: 20rem;
+  }
 `;
 
 export const ButtonSection = styled.div`
