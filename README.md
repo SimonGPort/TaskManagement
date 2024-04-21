@@ -23,7 +23,7 @@ Chaque task a un bouton pour sa completion. L'image du logo est un svg
 
 ### `Styling`
 
-J'ai utilise les styled component pour faire mon style. J'ai passe un prop dans mon styled component de taskItem Container pour changer sa couleur de rouge (Not Completed) a vert (Completed).
+J'ai utilise les styled component pour faire mon style. A noter: J'ai passe un prop dans mon styled component de taskItem Container pour changer sa couleur de rouge (Not Completed) a vert (Completed).
 
 ### `State management`
 
