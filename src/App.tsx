@@ -9,8 +9,17 @@ function App() {
   ]);
 
   const handleComplete = (index: number) => {
-    console.log("index:", index);
-    // setTasks(updatedTasks);
+    const tasksTemp = [...tasks];
+    tasksTemp[index] = {
+      ...tasksTemp[index],
+      completed: !tasksTemp[index].completed,
+    };
+    setTasks(tasksTemp);
+  };
+  const handleDelete = (index: number) => {
+    const tasksTemp = [...tasks];
+    tasksTemp.splice(index, 1);
+    setTasks(tasksTemp);
   };
 
   const handleAddTask = (name: string) => {
@@ -21,7 +30,11 @@ function App() {
   return (
     <>
       <TaskForm handleAddTask={handleAddTask} />
-      <TaskList tasks={tasks} handleComplete={handleComplete} />
+      <TaskList
+        tasks={tasks}
+        handleComplete={handleComplete}
+        handleDelete={handleDelete}
+      />
     </>
   );
 }
