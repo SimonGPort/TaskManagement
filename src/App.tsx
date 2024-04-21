@@ -1,12 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import TaskForm from "./components/taskform/TaskForm";
 import TaskList from "./components/tasklist/TaskList";
 import { TaskType } from "./interface/interface";
 
 function App() {
-  const [tasks, setTasks] = useState<TaskType[]>([
-    { name: "test", completed: false },
-  ]);
+  const [tasks, setTasks] = useState<TaskType[]>([]);
+  const [loadingData, setLoadingData] = useState<boolean>(true);
+
+  useEffect(() => {
+    if (loadingData) {
+      const storedTasks = localStorage.getItem("tasks");
+      if (storedTasks) {
+        setTasks(JSON.parse(storedTasks));
+      }
+      setLoadingData(false);
+    } else {
+      localStorage.setItem("tasks", JSON.stringify(tasks));
+    }
+  }, [tasks, loadingData]);
 
   const handleComplete = (index: number) => {
     const tasksTemp = [...tasks];
