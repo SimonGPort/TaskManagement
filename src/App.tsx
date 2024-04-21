@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import TaskForm from "./components/taskform/TaskForm";
 import TaskList from "./components/tasklist/TaskList";
 import { TaskType } from "./interface/interface";
+import "./App.css";
 
 function App() {
   const [tasks, setTasks] = useState<TaskType[]>([]);
@@ -42,11 +43,15 @@ function App() {
     <>
       <h1 className="header">Task Management Application</h1>
       <TaskForm handleAddTask={handleAddTask} />
-      <TaskList
-        tasks={tasks}
-        handleComplete={handleComplete}
-        handleDelete={handleDelete}
-      />
+      {loadingData ? (
+        <h3 className="loadingText">Loading...</h3>
+      ) : (
+        <TaskList
+          tasks={tasks}
+          handleComplete={handleComplete}
+          handleDelete={handleDelete}
+        />
+      )}
     </>
   );
 }
