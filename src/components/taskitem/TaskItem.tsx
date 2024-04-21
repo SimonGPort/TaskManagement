@@ -1,3 +1,4 @@
+import { DeleteIcon, CompletedIcon, NotCompletedIcon } from "../../icons/icons";
 import { TaskItemProps } from "../../interface/interface";
 
 const TaskItem: React.FC<TaskItemProps> = ({
@@ -13,9 +14,13 @@ const TaskItem: React.FC<TaskItemProps> = ({
   return (
     <div>
       <div>{task.name}</div>
+      <button onClick={() => handleComplete(index)}>
+        {task.completed ? <CompletedIcon /> : <NotCompletedIcon />}
+      </button>
       <div>{getStatusLabel(task.completed)}</div>
-      <button onClick={() => handleComplete(index)} />
-      <button onClick={() => handleDelete(index)} />
+      <button onClick={() => handleDelete(index)}>
+        <DeleteIcon />
+      </button>
     </div>
   );
 };
