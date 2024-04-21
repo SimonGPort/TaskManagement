@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { TaskFormProps } from "../../interface/taskFormProps";
+import { TaskFormProps } from "../../interface/interface";
 
 const TaskForm: React.FC<TaskFormProps> = ({ handleAddTask }) => {
   const [name, setName] = useState("");

@@ -1,16 +1,17 @@
 import React, { useState } from "react";
 import TaskForm from "./components/taskform/TaskForm";
 import TaskList from "./components/tasklist/TaskList";
-import { TaskType } from "./interface/task";
+import { TaskType } from "./interface/interface";
 
 function App() {
   const [tasks, setTasks] = useState<TaskType[]>([
     { name: "test", completed: false },
   ]);
 
-  // const handleComplete = () => {
-  //   // setTasks(updatedTasks);
-  // };
+  const handleComplete = (index: number) => {
+    console.log("index:", index);
+    // setTasks(updatedTasks);
+  };
 
   const handleAddTask = (name: string) => {
     const newTask = { name, completed: false };
@@ -20,7 +21,7 @@ function App() {
   return (
     <>
       <TaskForm handleAddTask={handleAddTask} />
-      <TaskList />
+      <TaskList tasks={tasks} handleComplete={handleComplete} />
     </>
   );
 }
