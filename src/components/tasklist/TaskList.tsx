@@ -1,5 +1,6 @@
-import { TaskListProps } from "../../interface/interface";
 import TaskItem from "../taskitem/TaskItem";
+import { TaskListProps } from "../../interface/interface";
+import { Container } from "./style";
 
 const TaskList: React.FC<TaskListProps> = ({
   tasks,
@@ -7,7 +8,7 @@ const TaskList: React.FC<TaskListProps> = ({
   handleDelete,
 }) => {
   return (
-    <div>
+    <Container>
       {tasks.map((task, idx) => {
         return (
           <TaskItem
@@ -19,7 +20,7 @@ const TaskList: React.FC<TaskListProps> = ({
           />
         );
       })}
-    </div>
+    </Container>
   );
 };
 

@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const Form = styled.form`
-  margin: 2rem 0;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
   display: flex;
   justify-content: center;
 `;

@@ -40,6 +40,7 @@ function App() {
 
   return (
     <>
+      <h1 className="header">Task Management Application</h1>
       <TaskForm handleAddTask={handleAddTask} />
       <TaskList
         tasks={tasks}
