@@ -1,6 +1,6 @@
 ## Build a simple task manager application
 
-To start the projet: npm install, npm start.
+To start the projet locally: npm install, npm start.
 
 ## Requirements
 
