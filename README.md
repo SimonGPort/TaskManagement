@@ -1,47 +1,46 @@
-# Getting Started with Create React App
+## Build a simple task manager application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+To start the projet with: npm install, npm start.
+Le projet est en typescript, les interfaces sont dans le dossier interface.tsx
 
-## Available Scripts
+## Requirements
 
-In the project directory, you can run:
+### `Task List`
 
-### `npm start`
+Le state de la liste des taches est dans le component App.tsx. Le state est une liste de tasks. Les tasks sont des objets de name:string et completed:boolean.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### `Task Creation`
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Dans le component TaskForm.tsx, on peut creer une nouvelle task avec le input et le bouton de creation.
 
-### `npm test`
+### `Task Deletion`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Chaque task a un bouton pour sa destruction. L'image du logo est un svg
 
-### `npm run build`
+### `Task Completion`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Chaque task a un bouton pour sa completion. L'image du logo est un svg
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### `Styling`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+J'ai utilise les styled component pour faire mon style. J'ai passe un prop dans mon styled component de taskItem Container pour changer sa couleur de rouge (Not Completed) a vert (Completed).
 
-### `npm run eject`
+### `State management`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Le state management est fait dans le component App.tsx. Les components TaskForm.tsx et TaskItem.tsx ont des fonctions qui remontent pour changer le state du parent App.tsx
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### `Component structure`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+App.tsx est le parent des components. Il possede 2 enfants: taskForm et TaskList. TaskForm contient le form qui fait la creation des nouvelles taches. TaskList est la liste avec les taches. Tasklist fait un map sur tasks, et creer le component taskItem qui est l'item pour une task.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### `Data persistence`
 
-## Learn More
+J'ai utilise le local storage pour storer mes datas. Ma logique ce fait dans le component App.tsx avec un useEffect
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### `Error Handling`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-# TaskManagement
+Je n'appelle pas d'api
+
+### `Responsive design`
+
+Ma logique de design responsive ce fait dans mes styled components. J'ai mis les breakpoints a 992px et 676px.
