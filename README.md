@@ -36,7 +36,7 @@ App.tsx est le parent des components. Il possede 2 enfants: taskForm et TaskList
 
 ### `Data persistence`
 
-J'ai utilisé le local storage pour storer mes datas. Ma logique ce fait dans le component App.tsx avec un useEffect
+J'ai utilisé le local storage pour storer mes datas. Ma logique ce fait dans le component App.tsx avec un useEffect. J'ai mis un message de loading... quand on a pas encore fini de fetch les datas.
 
 ### `Error Handling`
 
