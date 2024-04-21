@@ -1,6 +1,6 @@
 ## Build a simple task manager application
 
-To start the projet with: npm install, npm start.
+To start the projet: npm install, npm start.
 Le projet est en typescript, les interfaces sont dans le dossier interface.tsx
 
 ## Requirements
